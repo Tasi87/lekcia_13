@@ -1,16 +1,16 @@
-//idea	Modulárne programovanie
+// this - odkaz na objekt, s ktorým kód aktuálne pracuje
 
-//	imports:
-//note pre Menný export:
-// import { score, lifes, superFunction } from "./startgame.js"
-//note pre Default export:
-import setGame from "./startgame.js"
+const person =  {
+	firstName:		"Harry",
+	secondName:		"Potter",
+	introduction:	function () {	//! treba používať function declaration nie expression
+		return `Ahoj, moje meno je ${this.firstName} a priezvisko je ${this.secondName}.`;
+	}
+}
 
+const h1 = document.querySelector("h1");
 
-console.log(setGame.score);
-console.log(setGame.lifes);
+h1.addEventListener("click", function () {
+	console.log(this);
+});
 
-const score = 10;
-
-console.log(setGame.score);	// 0
-console.log(score);				// 10
